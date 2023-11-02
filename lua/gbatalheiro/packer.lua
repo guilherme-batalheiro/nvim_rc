@@ -37,9 +37,12 @@ return require('packer').startup(function(use)
 
     -- Telescope
     use 'nvim-lua/plenary.nvim'
-    use { 'nvim-telescope/telescope.nvim', tag = '0.1.0' }
+    use { 'nvim-telescope/telescope.nvim' }
 
     -- DAP
     use 'mfussenegger/nvim-dap'
     use 'rcarriga/nvim-dap-ui'
+
+    -- Org Mode
+    use "nvim-neorg/neorg"
 end)
