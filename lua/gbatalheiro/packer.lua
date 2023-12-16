@@ -42,7 +42,4 @@ return require('packer').startup(function(use)
     -- DAP
     use 'mfussenegger/nvim-dap'
     use 'rcarriga/nvim-dap-ui'
-
-    -- Org Mode
-    use "nvim-neorg/neorg"
 end)
