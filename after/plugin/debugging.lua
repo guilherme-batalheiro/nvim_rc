@@ -12,12 +12,24 @@ dap.listeners.before.event_exited["dapui_config"] = function()
 end
 
 require("dapui").setup({
+     controls = {
+      icons = {
+        disconnect = "disconnect",
+        pause = "||",
+        play = ">",
+        run_last = "run_last",
+        step_back = "back",
+        step_into = "into",
+        step_out = "out",
+        step_over = "over",
+        terminate = "X"
+      }
+    },
     layouts = {
         {
             elements = {
                 "breakpoints",
                 "scopes",
-                "watches",
             },
             size = 30,
             position = "left",

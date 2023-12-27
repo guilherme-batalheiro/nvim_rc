@@ -3,17 +3,20 @@ local cmp = require('cmp')
 
 cmp.setup({
     snippet = {
+        -- REQUIRED - you must specify a snippet engine
         expand = function(args)
-            require('luasnip').lsp_expand(args.body)
+            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
         end,
     },
     window = {
+        completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
     }),
     sources = cmp.config.sources({
+        { name = 'path' },
         { name = 'nvim_lsp' },
         { name = 'luasnip' }, -- For luasnip users.
     }, {
@@ -22,18 +25,17 @@ cmp.setup({
 })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
 local lspconfig = require('lspconfig')
 
 lspconfig.clangd.setup { -- C and C++
     capabilities = capabilities,
 }
 
-lspconfig.omnisharp.setup { -- C#
-    capabilities = capabilities,
-    cmd = { "dotnet",
-        vim.env.HOME .. "/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll" },
-}
+-- lspconfig.omnisharp.setup { -- C#
+--     capabilities = capabilities,
+--     cmd = { "dotnet",
+--         vim.env.HOME .. "/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll" },
+-- }
 
 lspconfig.gopls.setup { -- GO
     capabilities = capabilities,

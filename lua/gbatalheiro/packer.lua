@@ -10,27 +10,29 @@ return require('packer').startup(function(use)
     -- Theme
     use 'folke/tokyonight.nvim'
 
-    -- Auto complete and Lsp
+    -- Lsp support
     use {
         "williamboman/mason.nvim",
         run = ":MasonUpdate" -- :MasonUpdate updates registry contents
     }
     use 'neovim/nvim-lspconfig'
+
+    -- Autocompletion 
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
 
+    -- Snippets
+    use 'L3MON4D3/LuaSnip'
+    use 'saadparwaiz1/cmp_luasnip'
+
     -- Auto close
     use {
         "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {} end
     }
-
-    -- Snippy
-    use 'L3MON4D3/LuaSnip'
-    use 'saadparwaiz1/cmp_luasnip'
 
     -- Treesitter
     use 'nvim-treesitter/nvim-treesitter'
