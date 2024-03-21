@@ -29,6 +29,10 @@ local lspconfig = require('lspconfig')
 
 lspconfig.clangd.setup { -- C and C++
     capabilities = capabilities,
+    cmd = {
+        "clangd",
+        "--fallback-style=Webkit"
+    }
 }
 
 -- lspconfig.omnisharp.setup { -- C#
