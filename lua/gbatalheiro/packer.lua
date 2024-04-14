@@ -17,7 +17,7 @@ return require('packer').startup(function(use)
     }
     use 'neovim/nvim-lspconfig'
 
-    -- Autocompletion 
+    -- Autocompletion
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
@@ -43,5 +43,5 @@ return require('packer').startup(function(use)
 
     -- DAP
     use 'mfussenegger/nvim-dap'
-    use 'rcarriga/nvim-dap-ui'
+    use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } }
 end)
