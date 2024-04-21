@@ -16,3 +16,4 @@ vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 
 -- Tmux-sessionizer
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+
