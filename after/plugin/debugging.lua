@@ -55,22 +55,3 @@ dap.configurations.cpp = {
 }
 
 dap.configurations.c = dap.configurations.cpp
-
--- C#
-dap.adapters.coreclr = {
-    id = 'netcoredbg',
-    type = 'executable',
-    command = vim.env.HOME .. '/.local/share/nvim/mason/bin/netcoredbg',
-    args = { '--interpreter=vscode' }
-}
-
-dap.configurations.cs = {
-    {
-        name = "launch - netcoredbg",
-        type = "coreclr",
-        request = "launch",
-        program = function()
-            return vim.fn.input('Path to dll: ', vim.fn.getcwd() .. '/bin/Debug/', 'file')
-        end,
-    },
-}

@@ -35,12 +35,6 @@ lspconfig.clangd.setup { -- C and C++
     }
 }
 
--- lspconfig.omnisharp.setup { -- C#
---     capabilities = capabilities,
---     cmd = { "dotnet",
---         vim.env.HOME .. "/.local/share/nvim/mason/packages/omnisharp/libexec/OmniSharp.dll" },
--- }
-
 lspconfig.gopls.setup { -- GO
     capabilities = capabilities,
 }
@@ -71,6 +65,14 @@ lspconfig.lua_ls.setup { -- Lua
             },
         },
     }
+}
+
+lspconfig.tsserver.setup { -- TypeScript & JavaScript
+    capabilities = capabilities,
+}
+
+lspconfig.cssls.setup { -- CSS
+    capabilities = capabilities,
 }
 
 -- Disable inline errors
