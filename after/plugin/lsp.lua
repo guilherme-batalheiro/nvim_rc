@@ -67,13 +67,5 @@ lspconfig.lua_ls.setup { -- Lua
     }
 }
 
-lspconfig.tsserver.setup { -- TypeScript & JavaScript
-    capabilities = capabilities,
-}
-
-lspconfig.cssls.setup { -- CSS
-    capabilities = capabilities,
-}
-
 -- Disable inline errors
 vim.diagnostic.config({ virtual_text = false })
