@@ -14,6 +14,18 @@ vim.keymap.set("n", "N", "Nzz")
 -- Copy
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 
--- Tmux-sessionizer
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+-- Shortcuts
+vim.keymap.set("n", "<leader>sc", ":ShowShortcuts<CR>")
+
+vim.keymap.set("n", "<leader>cp",
+    function()
+        vim.fn.setreg('+', vim.fn.expand('%:p'))
+    end, { desc = 'Copy file path' }
+)
+
+vim.keymap.set("n", "<leader>cf",
+    function()
+        vim.fn.setreg('+', vim.fn.expand('%:t'))
+    end, { desc = 'Copy file name' }
+)
 

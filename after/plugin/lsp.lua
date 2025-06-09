@@ -31,7 +31,11 @@ lspconfig.clangd.setup { -- C and C++
     capabilities = capabilities,
     cmd = {
         "clangd",
-        "--fallback-style=Webkit"
+        "-j=8",
+        "--malloc-trim",
+        "--background-index",
+        "--pch-storage=memory",
+        "--fallback-style=.clang-format.memsql"
     }
 }
 

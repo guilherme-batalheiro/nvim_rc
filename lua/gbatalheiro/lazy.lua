@@ -41,14 +41,34 @@ require("lazy").setup({
 
     -- Treesitter
     "nvim-treesitter/nvim-treesitter",
+    "nvim-treesitter/nvim-treesitter-context",
 
     -- Telescope
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope.nvim",
+
+    -- File Browser in Telescope 
+    {
+        "nvim-telescope/telescope-file-browser.nvim",
+        dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+    },
+
+    -- Passing args in Telescope 
+    {
+        "nvim-telescope/telescope-live-grep-args.nvim",
+        dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+    },
 
     -- DAP
     "mfussenegger/nvim-dap",
     {
         "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" }
     },
+
+    -- VsCode like Git changes
+    "lewis6991/gitsigns.nvim",
+    
+    -- Git itegration
+    "tpope/vim-fugitive"
+
 })
