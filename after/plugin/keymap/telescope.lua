@@ -28,4 +28,10 @@ telescope.setup({
 })
 
 vim.keymap.set("n", "<space>ft", ":Telescope file_browser<CR>")
-vim.keymap.set("n", "<leader>fc", telescope.extensions.live_grep_args.live_grep_args, {})
+vim.keymap.set("n", "<leader>fc", function()
+  require("telescope").extensions.live_grep_args.live_grep_args({
+    additional_args = function(args)
+      return { "--hidden" }
+    end,
+  })
+end, {})
