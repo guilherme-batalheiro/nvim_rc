@@ -67,7 +67,7 @@ require("lazy").setup({
 
     -- VsCode like Git changes
     "lewis6991/gitsigns.nvim",
-    
+
     -- Git itegration
     "tpope/vim-fugitive"
 
